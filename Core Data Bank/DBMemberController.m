@@ -8,6 +8,7 @@
 
 #import "DBMemberController.h"
 #import "DBAppDelegate.h"
+#import "DBStack.h"
 
 @interface DBMemberController ()
 
@@ -17,21 +18,43 @@
 
 @implementation DBMemberController
 
-// smart return type for compiler i.e. makes sure that xcode knows what type it is
 + (DBMemberController *)sharedInstance {
     static DBMemberController *sharedInstance = nil;
-    // this part will only run once for life of app
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        sharedInstance = [DBMemberController new];
-        
-        DBAppDelegate *appDelegate = (DBAppDelegate *)[UIApplication sharedApplication].delegate;
+        sharedInstance = [[DBMemberController alloc] init];
+        DBAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
         
         sharedInstance.managedObjectContext = appDelegate.stack.managedObjectContext;
-        
     });
-    
     return sharedInstance;
+}
+
+- (Member*)rootMember
+{
+    NSFetchRequest* request = [NSFetchRequest fetchRequestWithEntityName:@"Member"];
+    request.predicate = [NSPredicate predicateWithFormat:@"parent = %@", nil];
+    
+    NSArray* objects = [self.managedObjectContext  executeFetchRequest:request error:NULL];
+    
+    Member* rootMember = [objects lastObject];
+    
+    if (rootMember == nil) {
+        rootMember = [DBMemberController insertMemberWithTitle:nil parent:nil inManagedObjectContext:self.managedObjectContext];
+    }
+    return rootMember;
+}
+
++ (Member *)insertMemberWithTitle:(NSString*)title
+                           parent:(Member*)parent
+           inManagedObjectContext:(NSManagedObjectContext *)managedObjectContext
+{
+    Member* member = [NSEntityDescription insertNewObjectForEntityForName:@"Member"
+                                                   inManagedObjectContext:managedObjectContext];
+    member.title = title;
+    member.parent = parent;
+    
+    return member;
 }
 
 @end

@@ -24,6 +24,9 @@
 		AF6E93FE194A834D0070FBF9 /* Member.m in Sources */ = {isa = PBXBuildFile; fileRef = AF6E93FD194A834D0070FBF9 /* Member.m */; };
 		AF6E9401194A88260070FBF9 /* DBStack.m in Sources */ = {isa = PBXBuildFile; fileRef = AF6E9400194A88260070FBF9 /* DBStack.m */; };
 		AF6E9404194A8F210070FBF9 /* DBMemberController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF6E9403194A8F210070FBF9 /* DBMemberController.m */; };
+		AF6E9407194A96B10070FBF9 /* DBMemberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF6E9406194A96B10070FBF9 /* DBMemberViewController.m */; };
+		AF6E940A194A9BA30070FBF9 /* DBMemberAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF6E9409194A9BA30070FBF9 /* DBMemberAddViewController.m */; };
+		AF6E940D194A9C210070FBF9 /* DBMemberTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AF6E940C194A9C210070FBF9 /* DBMemberTableViewDataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,12 @@
 		AF6E9400194A88260070FBF9 /* DBStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBStack.m; sourceTree = "<group>"; };
 		AF6E9402194A8F210070FBF9 /* DBMemberController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBMemberController.h; sourceTree = "<group>"; };
 		AF6E9403194A8F210070FBF9 /* DBMemberController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBMemberController.m; sourceTree = "<group>"; };
+		AF6E9405194A96B10070FBF9 /* DBMemberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBMemberViewController.h; sourceTree = "<group>"; };
+		AF6E9406194A96B10070FBF9 /* DBMemberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBMemberViewController.m; sourceTree = "<group>"; };
+		AF6E9408194A9BA30070FBF9 /* DBMemberAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBMemberAddViewController.h; sourceTree = "<group>"; };
+		AF6E9409194A9BA30070FBF9 /* DBMemberAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBMemberAddViewController.m; sourceTree = "<group>"; };
+		AF6E940B194A9C210070FBF9 /* DBMemberTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBMemberTableViewDataSource.h; sourceTree = "<group>"; };
+		AF6E940C194A9C210070FBF9 /* DBMemberTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBMemberTableViewDataSource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,15 +131,21 @@
 		715810BD1949FD71006ECE83 /* Core Data Bank */ = {
 			isa = PBXGroup;
 			children = (
-				AF6E93FF194A88260070FBF9 /* DBStack.h */,
-				AF6E9400194A88260070FBF9 /* DBStack.m */,
+				AF6E93F9194A81EA0070FBF9 /* CoreDataBank.xcdatamodeld */,
 				715810C61949FD71006ECE83 /* DBAppDelegate.h */,
 				715810C71949FD71006ECE83 /* DBAppDelegate.m */,
-				AF6E93F9194A81EA0070FBF9 /* CoreDataBank.xcdatamodeld */,
-				AF6E9402194A8F210070FBF9 /* DBMemberController.h */,
-				AF6E9403194A8F210070FBF9 /* DBMemberController.m */,
+				AF6E9408194A9BA30070FBF9 /* DBMemberAddViewController.h */,
+				AF6E9409194A9BA30070FBF9 /* DBMemberAddViewController.m */,
+				AF6E940B194A9C210070FBF9 /* DBMemberTableViewDataSource.h */,
+				AF6E940C194A9C210070FBF9 /* DBMemberTableViewDataSource.m */,
+				AF6E9405194A96B10070FBF9 /* DBMemberViewController.h */,
+				AF6E9406194A96B10070FBF9 /* DBMemberViewController.m */,
+				AF6E93FF194A88260070FBF9 /* DBStack.h */,
+				AF6E9400194A88260070FBF9 /* DBStack.m */,
 				AF6E93FC194A834D0070FBF9 /* Member.h */,
 				AF6E93FD194A834D0070FBF9 /* Member.m */,
+				AF6E9402194A8F210070FBF9 /* DBMemberController.h */,
+				AF6E9403194A8F210070FBF9 /* DBMemberController.m */,
 				715810C91949FD71006ECE83 /* Images.xcassets */,
 				715810BE1949FD71006ECE83 /* Supporting Files */,
 			);
@@ -264,9 +279,12 @@
 			files = (
 				715810C81949FD71006ECE83 /* DBAppDelegate.m in Sources */,
 				AF6E93FB194A81EA0070FBF9 /* CoreDataBank.xcdatamodeld in Sources */,
+				AF6E9407194A96B10070FBF9 /* DBMemberViewController.m in Sources */,
 				AF6E9401194A88260070FBF9 /* DBStack.m in Sources */,
+				AF6E940A194A9BA30070FBF9 /* DBMemberAddViewController.m in Sources */,
 				AF6E9404194A8F210070FBF9 /* DBMemberController.m in Sources */,
 				715810C41949FD71006ECE83 /* main.m in Sources */,
+				AF6E940D194A9C210070FBF9 /* DBMemberTableViewDataSource.m in Sources */,
 				AF6E93FE194A834D0070FBF9 /* Member.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

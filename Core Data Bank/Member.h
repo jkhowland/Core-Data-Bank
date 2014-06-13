@@ -25,4 +25,7 @@
 - (void)addChildren:(NSSet *)values;
 - (void)removeChildren:(NSSet *)values;
 
+- (NSInteger)numberOfChildren;
+- (NSFetchedResultsController*)childrenFetchedResultsController;
+
 @end

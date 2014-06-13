@@ -7,8 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DBMemberController.h"
+#import "Member.h"
 
 @interface DBMemberController : NSObject
+
++ (DBMemberController *)sharedInstance;
+
+- (Member *)rootMember;
+
++ (Member *)insertMemberWithTitle:(NSString*)title
+                           parent:(Member*)parent
+           inManagedObjectContext:(NSManagedObjectContext *)managedObjectContext;
 
 @end
