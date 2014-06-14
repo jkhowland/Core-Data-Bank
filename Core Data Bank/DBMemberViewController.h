@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DBViewController : UIViewController
+#import "Member.h"
+
+@interface DBMemberViewController : UIViewController
 
 @property (nonatomic, strong) Member *member;
 
